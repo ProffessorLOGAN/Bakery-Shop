@@ -106,7 +106,7 @@ if (isset($_GET["action"])) {
             while ($row = mysqli_fetch_array($result)) {
         ?>
                 <div class="col-sm-4 " style="float:left;">
-                    <form method="post" action="bakery.php?action=add&id=<?php echo $row['id']; ?> ">
+                    <form method="post" action="index.php?action=add&id=<?php echo $row['id']; ?> ">
                         <div style="border:1px solid #333; background-color: #f1f1f1;border-radius:5px; padding:16px;">
                             <img src="<?php echo $row['image']; ?>" style="width:300px;height:200px;">
                             <h4 class="text-info text-center"> <?php echo $row['itemname']; ?></h4>
@@ -148,7 +148,7 @@ if (isset($_GET["action"])) {
                             <td><?php echo $values["item_quantity"]; ?></td>
                             <td><?php echo $values["item_price"]; ?></td>
                             <td><?php echo number_format($values["item_quantity"] * $values["item_price"], 2) ?></td>
-                            <td><a href="bakery.php?action=delete&id=<?php echo $values["item_id"]; ?>" style="text-decoration:none;" class="btn-sm btn-danger"><span class=" text-light">remove</span></a></td>
+                            <td><a href="index.php?action=delete&id=<?php echo $values["item_id"]; ?>" style="text-decoration:none;" class="btn-sm btn-danger"><span class=" text-light">remove</span></a></td>
                         </tr>
                     <?php
                         $total = $total + ($values["item_quantity"] * $values["item_price"]);
